@@ -3,10 +3,10 @@ pipeline {
     stages {
         stage('verify version') {
             steps {
-                sh 'php --version'
+                bash 'php --version'
             }
         }
-        stage('hello') {
+        stage('build') {
         steps{
         sh 'php index.php'
         }
