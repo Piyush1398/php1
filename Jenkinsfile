@@ -1,10 +1,15 @@
 pipeline {
-    agent { docker { image 'php:8.1.11-alpine' } }
+    agent any 
     stages {
-        stage('build') {
+        stage('verify version') {
             steps {
-                sh 'index.php'
+                sh 'php --version'
             }
         }
+        stage{'hello'} {
+        steps{
+        sh 'php index.php'
+        }
+       }
     }
 }
